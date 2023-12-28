@@ -1,0 +1,68 @@
+.blog {
+  max-width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.blog aside {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+}
+
+.blog aside p {
+  text-wrap: nowrap;
+}
+
+.blog main {
+  max-width: 70%;
+}
+
+.blog main p:not(:first-child) {
+  margin-block: 30px;
+}
+
+.blog main h1 {
+  color: var(--yellow-clr) !important;
+}
+
+.blog main p {
+  font-size: 16px !important;
+}
+
+.blog main .tags {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.blog main .tags span {
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  padding: 5px;
+  font-size: 10px;
+  font-family: "runo", sans-serif;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .blog {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .blog main {
+    max-width: 100%;
+  }
+
+  .blog aside {
+    position: static;
+  }
+}

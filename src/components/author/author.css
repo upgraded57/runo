@@ -1,0 +1,41 @@
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.author-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author span {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.author span p {
+  margin: 0 !important;
+}
+
+.author-social {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

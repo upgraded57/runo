@@ -75,31 +75,56 @@ const blogs = [
   },
 ];
 
-export const BlogCard = () => {
-  return (
-    <>
-      <div className="blogcard-nav">
-        <p className="text-body text-bold active">All</p>
-        <p className="text-body text-bold">Adventure</p>
-        <p className="text-body text-bold">Travel</p>
-        <p className="text-body text-bold">Fashion</p>
-        <p className="text-body text-bold">Technology</p>
-        <p className="text-body text-bold">Branding</p>
-      </div>
-      <div className="flex">
-        {blogs.map((blog) => (
-          <div className="blogCard" key={blog.idx}>
-            <div className="cover">
-              <img src={blog.coverImg} alt="" />
-              <div className="shade"></div>
-              <div className="pill">{blog.tag}</div>
-            </div>
-            <p className="text-body">{blog.date}</p>
-            <h2 className="h-200">{blog.headline}</h2>
-            <p className="text-body">{blog.desc}</p>
+export const BlogCard = ({ type }) => {
+  switch (type) {
+    case "main":
+      return (
+        <>
+          <div className="blogcard-nav">
+            <p className="text-body text-bold active">All</p>
+            <p className="text-body text-bold">Adventure</p>
+            <p className="text-body text-bold">Travel</p>
+            <p className="text-body text-bold">Fashion</p>
+            <p className="text-body text-bold">Technology</p>
+            <p className="text-body text-bold">Branding</p>
           </div>
-        ))}
-      </div>
-    </>
-  );
+          <div className="flex">
+            {blogs.map((blog) => (
+              <div className="blogCard" key={blog.idx}>
+                <div className="cover">
+                  <img src={blog.coverImg} alt="" />
+                  <div className="shade"></div>
+                  <div className="pill">{blog.tag}</div>
+                </div>
+                <p className="text-body">{blog.date}</p>
+                <h2 className="h-200">{blog.headline}</h2>
+                <p className="text-body">{blog.desc}</p>
+              </div>
+            ))}
+          </div>
+        </>
+      );
+    case "related-post":
+      return (
+        <div className="related">
+          <div className="container">
+            <h2 className="h-200">Related Post</h2>
+            <div className="flex">
+              {blogs.slice(0, 4).map((blog) => (
+                <div className="blogCard" key={blog.idx}>
+                  <div className="cover">
+                    <img src={blog.coverImg} alt="" />
+                    <div className="shade"></div>
+                    <div className="pill">{blog.tag}</div>
+                  </div>
+                  <p className="text-body">{blog.date}</p>
+                  <h2 className="h-200">{blog.headline}</h2>
+                  <p className="text-body">{blog.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+  }
 };

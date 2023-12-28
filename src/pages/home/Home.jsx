@@ -9,11 +9,11 @@ import { EditorCard } from "./../../components/editorCard/EditorCard";
 export default function Home() {
   return (
     <div className="home">
-      <Hero />
+      <Hero type="main" />
       <Header />
       <div className="container">
         <h1 className="h-300">Popular topics</h1>
-        <BlogCard />
+        <BlogCard type="main" />
       </div>
       <Subhero />
       <div className="container">

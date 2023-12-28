@@ -32,7 +32,7 @@ const heroData = [
   },
 ];
 
-export const Hero = () => {
+export const Hero = ({ type }) => {
   const [currentHeroScreen, setCurrentHeroScreen] = useState(1);
   const slideHeroScreen = (e) => {
     setCurrentHeroScreen(e.target.dataset.idx);
@@ -43,36 +43,60 @@ export const Hero = () => {
     e.target.classList.add("active");
   };
 
-  return (
-    <div className="hero">
-      <div
-        className="hero-swiper"
-        style={{ left: `${(currentHeroScreen - 1) * -100}vw` }}
-      >
-        {heroData?.map((data) => (
-          <div className="hero-screen" key={data.idx}>
-            <div className="cover-img">
-              <img src={data.coverImg} alt="Cover Photo" />
-            </div>
+  switch (type) {
+    case "main":
+      return (
+        <div className="hero">
+          <div
+            className="hero-swiper"
+            style={{ left: `${(currentHeroScreen - 1) * -100}vw` }}
+          >
+            {heroData?.map((data) => (
+              <div className="hero-screen" key={data.idx}>
+                <div className="cover-img">
+                  <img src={data.coverImg} alt="Cover Photo" />
+                </div>
 
-            <div className="hero__content">
-              <div className="pill">{data.tag}</div>
-              <h1 className="h-300">{data.headLine}</h1>
-              <div className="hero__content-bottom">
-                <p className="text-body">{data.date}</p>
-                <img src={bar} alt="" />
-                <p className="text-body">{data.desc}</p>
+                <div className="hero__content">
+                  <div className="pill">{data.tag}</div>
+                  <h1 className="h-300">{data.headLine}</h1>
+                  <div className="hero__content-bottom">
+                    <p className="text-body">{data.date}</p>
+                    <img src={bar} alt="" />
+                    <p className="text-body">{data.desc}</p>
+                  </div>
+                </div>
               </div>
+            ))}
+          </div>
+
+          <div className="hero-controller">
+            <span
+              className="active"
+              onClick={slideHeroScreen}
+              data-idx="1"
+            ></span>
+            <span onClick={slideHeroScreen} data-idx="2"></span>
+            <span onClick={slideHeroScreen} data-idx="3"></span>
+          </div>
+        </div>
+      );
+    case "single":
+      return (
+        <div className="hero single">
+          <div className="cover-img">
+            <img src={heroData[0].coverImg} alt="Cover Photo" />
+          </div>
+
+          <div className="hero__content">
+            <div className="pill">{heroData[0].tag}</div>
+            <h1 className="h-300">{heroData[0].headLine}</h1>
+            <div className="hero__content-bottom">
+              <p className="text-body">{heroData[0].desc}</p>
+              <p className="text-body text-bold">By Jennifer Lawrence</p>
             </div>
           </div>
-        ))}
-      </div>
-
-      <div className="hero-controller">
-        <span className="active" onClick={slideHeroScreen} data-idx="1"></span>
-        <span onClick={slideHeroScreen} data-idx="2"></span>
-        <span onClick={slideHeroScreen} data-idx="3"></span>
-      </div>
-    </div>
-  );
+        </div>
+      );
+  }
 };
