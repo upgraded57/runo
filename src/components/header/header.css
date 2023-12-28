@@ -1,0 +1,207 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-inline: 4vw;
+  height: 80px;
+  background: #00000020;
+  position: absolute;
+  top: 0;
+  inset: 0;
+}
+
+header .logo {
+  font-family: "League Spartan", sans-serif;
+  margin-right: auto;
+  font-size: 20px;
+  color: white;
+}
+
+header .logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header nav,
+header .social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
+  border-right: 1px solid white;
+  margin-right: 20px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 3px;
+  transition: 0.2s;
+}
+
+header nav a.active {
+  border-bottom: 2px solid var(--yellow-clr);
+}
+
+header nav a:not(.active):hover,
+header .social span:hover {
+  color: var(--yellow-clr);
+}
+
+header .social span {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+header .search {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header .search span {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+header .search span.burger {
+  display: none;
+}
+
+/* mobile */
+.nav-mobile {
+  position: absolute;
+  top: 80px;
+  opacity: 0;
+  background: white;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  width: min(300px, 100vw);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.nav-mobile.active {
+  opacity: 1;
+  transform: scaleY(1);
+  transform-origin: bottom;
+}
+
+.nav-mobile a {
+  text-decoration: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-mobile a span {
+  display: flex;
+}
+
+.nav-mobile a:hover {
+  background: #343a40;
+  color: white;
+}
+
+.social-mobile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+  border-top: 1px solid #343a4020;
+  padding-top: 10px;
+}
+
+.social-mobile span {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.social-mobile span:hover {
+  color: var(--yellow-clr);
+}
+
+@media screen and (max-width: 768px) {
+  header .search span.burger {
+    display: block;
+  }
+
+  header .social {
+    display: none;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+  }
+
+  .search-box {
+    padding-inline: 4vw;
+  }
+}
+
+.search-box {
+  width: min(500px, 100vw);
+  height: 40px;
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%) scaleY(0);
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.search-box.active {
+  transform: translateX(-50%) scaleY(1);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.search-box form {
+  border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.search-box .icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: #343a40;
+  color: white !important;
+}
+
+.search-box form input {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  font-family: inherit;
+}

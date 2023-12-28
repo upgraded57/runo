@@ -1,0 +1,53 @@
+.subfooter {
+  padding: 10vh 4vw;
+  background: #212529;
+  color: white !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.subfooter > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 300px;
+  margin-bottom: 20px;
+}
+
+.subfooter > div p {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.subfooter > div p:hover {
+  opacity: 0.9;
+  text-decoration: underline;
+}
+
+.subfooter .connections .icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.subfooter .connections .icons span {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.subfooter .connections .icons span:hover {
+  opacity: 0.9;
+}
+
+footer {
+  width: 100vw;
+  padding-inline: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background: #343a40;
+  color: white !important;
+}
