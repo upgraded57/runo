@@ -1,16 +1,14 @@
-.query > h2 {
-  padding: 20px 4vw !important;
-  position: sticky;
-  top: 0;
-  background: white;
-  z-index: 20;
+.query > .container {
+  padding-block: 20px;
 }
 
 .query_lists {
   margin-top: 30px;
-  padding: 20px 4vw;
+  width: 100%;
+  margin-inline: auto;
+  padding: 20px 0;
   display: flex;
   flex-wrap: wrap;
   gap: 20px 50px;
-  justify-content: center;
+  justify-content: flex-start;
 }

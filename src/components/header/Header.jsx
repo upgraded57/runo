@@ -41,8 +41,8 @@ export default function Header({ withPadding }) {
         </div>
         <nav>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
           <NavLink to="/articles">Articles</NavLink>
+          <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact Us</NavLink>
         </nav>
 
@@ -58,17 +58,7 @@ export default function Header({ withPadding }) {
             </span>
             Home
           </NavLink>
-          <NavLink
-            to="/about"
-            onClick={() =>
-              document.querySelector(".nav-mobile").classList.remove("active")
-            }
-          >
-            <span>
-              <GoQuestion />
-            </span>
-            About
-          </NavLink>
+
           <NavLink
             to="/articles"
             onClick={() =>
@@ -79,6 +69,17 @@ export default function Header({ withPadding }) {
               <HiOutlineDocumentDuplicate />
             </span>
             Articles
+          </NavLink>
+          <NavLink
+            to="/about"
+            onClick={() =>
+              document.querySelector(".nav-mobile").classList.remove("active")
+            }
+          >
+            <span>
+              <GoQuestion />
+            </span>
+            About
           </NavLink>
           <NavLink
             to="/contact"

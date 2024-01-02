@@ -1,0 +1,7 @@
+.articles .container {
+  padding-block: 20px;
+}
+
+.articles .query_lists {
+  margin-top: 0 !important;
+}

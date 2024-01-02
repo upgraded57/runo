@@ -16,6 +16,16 @@
 .blogCard {
   width: min(320px, 100%);
   margin-block: 30px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.blogCard:hover {
+  box-shadow: 2px 5px 5px #e5e5e590;
+  background: #f9f9f9;
+  transform: translateY(-3px) scale(1.01);
 }
 
 .blogCard .cover {
@@ -41,6 +51,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.3s;
 }
 
 .blogCard .cover .pill {

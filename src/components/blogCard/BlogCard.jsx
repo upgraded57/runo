@@ -132,7 +132,7 @@ export const BlogCard = ({ type }) => {
           <div className="container">
             <h2 className="h-200">Recent Posts</h2>
             <div className="flex">
-              {blogs.slice(0, 4).map((blog) => (
+              {blogs.slice(0, 6).map((blog) => (
                 <div className="blogCard" key={blog.idx}>
                   <div className="cover">
                     <img src={blog.coverImg} alt="" loading="lazy" />

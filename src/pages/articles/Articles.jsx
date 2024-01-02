@@ -1,22 +1,33 @@
-import { useParams } from "react-router-dom";
-import "./search.css";
-import Header from "./../../components/header/Header";
-import { BlogCard } from "../../components/blogCard/BlogCard";
-import { Subhero } from "./../../components/subhero/Subhero";
-import List from "./../../components/list/List";
-import Footer from "./../../components/footer/Footer";
+import "./articles.css";
+import "../search/search.css";
 
-export default function Search() {
-  const { query } = useParams();
+import Header from "./../../components/header/Header";
+import { Subhero } from "./../../components/subhero/Subhero";
+import List from "../../components/list/List";
+import Footer from "./../../components/footer/Footer";
+import { BlogCard } from "../../components/blogCard/BlogCard";
+
+export default function Articles() {
   return (
     <>
       <Header withPadding />
-      <div className="query">
+      <div className="articles">
         <div className="container">
-          <h1 className="h-300">Your search: {query}</h1>
+          <h1 className="h-100">Most Viewed Today</h1>
         </div>
         <Subhero small />
+
         <div className="container">
+          <h1 className="h-100">Popular</h1>
+          <div className="query_lists">
+            <List />
+            <List />
+            <List />
+            <List />
+          </div>
+        </div>
+        <div className="container">
+          <h1 className="h-100">Sport</h1>
           <div className="query_lists">
             <List />
             <List />
@@ -26,6 +37,7 @@ export default function Search() {
         </div>
         <Subhero small />
         <div className="container">
+          <h1 className="h-100">Politics</h1>
           <div className="query_lists">
             <List />
             <List />
@@ -33,9 +45,19 @@ export default function Search() {
             <List />
           </div>
         </div>
-        <Subhero small />
         <div className="container">
+          <h1 className="h-100">Entertainment</h1>
           <div className="query_lists">
+            <List />
+            <List />
+            <List />
+            <List />
+          </div>
+        </div>
+        <div className="container">
+          <h1 className="h-100">Technology</h1>
+          <div className="query_lists">
+            <List />
             <List />
             <List />
             <List />
