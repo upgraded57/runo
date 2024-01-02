@@ -14,7 +14,7 @@ import { RiHome2Line } from "react-icons/ri";
 import { GoQuestion } from "react-icons/go";
 import { HiOutlineDocumentDuplicate } from "react-icons/hi2";
 import { SlEarphones } from "react-icons/sl";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Header({ withPadding }) {
   const navigate = useNavigate();
