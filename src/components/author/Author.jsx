@@ -13,7 +13,7 @@ export const Author = () => {
     <div className="author">
       <div className="author-left">
         <div className="author-img">
-          <img src={authorImg} alt="" />
+          <img src={authorImg} alt="" loading="lazy" />
         </div>
         <span>
           <p className="text-bold">By Jennifer Lawrence</p>

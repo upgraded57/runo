@@ -8,6 +8,7 @@ header {
   position: absolute;
   top: 0;
   inset: 0;
+  z-index: 999;
 }
 
 header .logo {
@@ -75,11 +76,13 @@ header .search span.burger {
 /* mobile */
 .nav-mobile {
   position: absolute;
-  top: 80px;
+  top: 90px;
   opacity: 0;
   background: white;
   display: none;
   flex-direction: column;
+  border: 1px solid #343a4020;
+  box-shadow: 2px 5px 10px #343a4020;
   gap: 5px;
   padding: 10px;
   border-radius: 10px;
@@ -87,6 +90,7 @@ header .search span.burger {
   transform: scaleY(0);
   transform-origin: top;
   transition: 0.3s;
+  z-index: 1000;
 }
 
 .nav-mobile.active {
@@ -204,4 +208,9 @@ header .search span.burger {
   outline: none;
   border: none;
   font-family: inherit;
+}
+
+.headerPadding {
+  width: 100%;
+  height: 80px;
 }

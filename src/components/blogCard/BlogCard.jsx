@@ -92,7 +92,7 @@ export const BlogCard = ({ type }) => {
             {blogs.map((blog) => (
               <div className="blogCard" key={blog.idx}>
                 <div className="cover">
-                  <img src={blog.coverImg} alt="" />
+                  <img src={blog.coverImg} alt="" loading="lazy" />
                   <div className="shade"></div>
                   <div className="pill">{blog.tag}</div>
                 </div>
@@ -108,12 +108,34 @@ export const BlogCard = ({ type }) => {
       return (
         <div className="related">
           <div className="container">
-            <h2 className="h-200">Related Post</h2>
+            <h2 className="h-200">Related Posts</h2>
             <div className="flex">
               {blogs.slice(0, 4).map((blog) => (
                 <div className="blogCard" key={blog.idx}>
                   <div className="cover">
-                    <img src={blog.coverImg} alt="" />
+                    <img src={blog.coverImg} alt="" loading="lazy" />
+                    <div className="shade"></div>
+                    <div className="pill">{blog.tag}</div>
+                  </div>
+                  <p className="text-body">{blog.date}</p>
+                  <h2 className="h-200">{blog.headline}</h2>
+                  <p className="text-body">{blog.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    case "recent-post":
+      return (
+        <div className="related">
+          <div className="container">
+            <h2 className="h-200">Recent Posts</h2>
+            <div className="flex">
+              {blogs.slice(0, 4).map((blog) => (
+                <div className="blogCard" key={blog.idx}>
+                  <div className="cover">
+                    <img src={blog.coverImg} alt="" loading="lazy" />
                     <div className="shade"></div>
                     <div className="pill">{blog.tag}</div>
                   </div>

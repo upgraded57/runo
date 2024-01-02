@@ -54,7 +54,7 @@ export const Hero = ({ type }) => {
             {heroData?.map((data) => (
               <div className="hero-screen" key={data.idx}>
                 <div className="cover-img">
-                  <img src={data.coverImg} alt="Cover Photo" />
+                  <img src={data.coverImg} alt="Cover Photo" loading="lazy" />
                 </div>
 
                 <div className="hero__content">
@@ -85,7 +85,7 @@ export const Hero = ({ type }) => {
       return (
         <div className="hero single">
           <div className="cover-img">
-            <img src={heroData[0].coverImg} alt="Cover Photo" />
+            <img src={heroData[0].coverImg} alt="Cover Photo" loading="lazy" />
           </div>
 
           <div className="hero__content">

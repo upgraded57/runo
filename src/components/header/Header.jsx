@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import "./header.css";
 
 import {
@@ -14,14 +14,28 @@ import { RiHome2Line } from "react-icons/ri";
 import { GoQuestion } from "react-icons/go";
 import { HiOutlineDocumentDuplicate } from "react-icons/hi2";
 import { SlEarphones } from "react-icons/sl";
+import { useEffect, useState } from "react";
 
-export default function Header() {
+export default function Header({ withPadding }) {
+  const navigate = useNavigate();
   const toggleSidebar = () => {
     document.querySelector(".nav-mobile").classList.toggle("active");
   };
+
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const search = (e) => {
+    e.preventDefault();
+    navigate(`/search/${searchQuery}`);
+  };
+
   return (
     <>
-      <header>
+      <header
+        style={{
+          backgroundColor: withPadding ? "#343a40" : "",
+        }}
+      >
         <div className="logo">
           <Link to="/">RUNO</Link>
         </div>
@@ -134,14 +148,19 @@ export default function Header() {
         </div>
 
         <div className="search-box">
-          <form>
+          <form onSubmit={search}>
             <div className="icon">
               <FiSearch />
             </div>
-            <input type="text" placeholder="Search..." />
+            <input
+              type="text"
+              placeholder="Search..."
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </form>
         </div>
       </header>
+      {withPadding && <div className="headerPadding"></div>}
     </>
   );
 }
