@@ -1,5 +1,5 @@
 import "./list.css";
-import listImg from "../../assets/blog Image.png";
+import listImg from "../../assets/Blog Image.png";
 import { useNavigate } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa";
 import { BsChatDots } from "react-icons/bs";
