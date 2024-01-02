@@ -171,6 +171,22 @@ header .search span.burger {
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
+  transform-origin: top;
+}
+
+.search-box::before {
+  content: "";
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  inset: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -10px;
+  background: #00000020;
+  -moz-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  z-index: -1;
 }
 
 .search-box.active {

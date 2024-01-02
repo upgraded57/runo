@@ -18,7 +18,10 @@ export default function Articles() {
         <Subhero small />
 
         <div className="container">
-          <h1 className="h-100">Popular</h1>
+          <div className="articles_header">
+            <h1 className="h-100">Popular</h1>
+            <button type="button">Load More</button>
+          </div>
           <div className="query_lists">
             <List />
             <List />
@@ -27,7 +30,10 @@ export default function Articles() {
           </div>
         </div>
         <div className="container">
-          <h1 className="h-100">Sport</h1>
+          <div className="articles_header">
+            <h1 className="h-100">Sport</h1>
+            <button type="button">Load More</button>
+          </div>
           <div className="query_lists">
             <List />
             <List />
@@ -37,7 +43,10 @@ export default function Articles() {
         </div>
         <Subhero small />
         <div className="container">
-          <h1 className="h-100">Politics</h1>
+          <div className="articles_header">
+            <h1 className="h-100">Politics</h1>
+            <button type="button">Load More</button>
+          </div>
           <div className="query_lists">
             <List />
             <List />
@@ -46,7 +55,10 @@ export default function Articles() {
           </div>
         </div>
         <div className="container">
-          <h1 className="h-100">Entertainment</h1>
+          <div className="articles_header">
+            <h1 className="h-100">Entertainment</h1>
+            <button type="button">Load More</button>
+          </div>
           <div className="query_lists">
             <List />
             <List />
@@ -55,7 +67,10 @@ export default function Articles() {
           </div>
         </div>
         <div className="container">
-          <h1 className="h-100">Technology</h1>
+          <div className="articles_header">
+            <h1 className="h-100">Technology</h1>
+            <button type="button">Load More</button>
+          </div>
           <div className="query_lists">
             <List />
             <List />

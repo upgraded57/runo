@@ -7,6 +7,7 @@ import Search from "./pages/search/Search";
 import Articles from "./pages/articles/Articles";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
+import Categories from "./pages/categories/Categories";
 
 function App() {
   const queryClient = new QueryClient();
@@ -18,6 +19,10 @@ function App() {
           <Route path="/articles" element={<Articles />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/articles/category/:article_category"
+            element={<Categories />}
+          />
           <Route path="/articles/:id/" element={<Blog />} />
           <Route path="/search/:query/" element={<Search />} />
         </Routes>

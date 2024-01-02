@@ -5,7 +5,7 @@ import {
   FaFacebook,
   FaTwitter,
   FaYoutube,
-  FaPinterest,
+  FaLinkedin,
   FaBehanceSquare,
 } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
@@ -14,7 +14,7 @@ import { RiHome2Line } from "react-icons/ri";
 import { GoQuestion } from "react-icons/go";
 import { HiOutlineDocumentDuplicate } from "react-icons/hi2";
 import { SlEarphones } from "react-icons/sl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Header({ withPadding }) {
   const navigate = useNavigate();
@@ -109,7 +109,7 @@ export default function Header({ withPadding }) {
               <FaYoutube />
             </span>
             <span>
-              <FaPinterest />
+              <FaLinkedin />
             </span>
             <span>
               <FaBehanceSquare />
@@ -128,7 +128,7 @@ export default function Header({ withPadding }) {
             <FaYoutube />
           </span>
           <span>
-            <FaPinterest />
+            <FaLinkedin />
           </span>
           <span>
             <FaBehanceSquare />

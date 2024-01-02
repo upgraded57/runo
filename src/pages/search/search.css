@@ -7,8 +7,19 @@
   width: 100%;
   margin-inline: auto;
   padding: 20px 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px 50px;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .query_lists {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .query_lists {
+    display: block;
+  }
 }

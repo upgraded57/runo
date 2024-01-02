@@ -3,7 +3,7 @@
   align-items: flex-start;
   gap: 20px;
   margin-bottom: 20px;
-  width: min(500px, 100%);
+  width: 100%;
   border-radius: 10px;
   padding: 5px;
   box-shadow: 2px 2px 5px #343a4020;
@@ -17,10 +17,8 @@
 }
 
 .list .list_img {
-  width: 80px;
-  height: 80px;
-  min-width: 80px;
-  min-height: 80px;
+  min-height: 100%;
+  aspect-ratio: 1/1;
   overflow: hidden;
   border-radius: 5px;
 }
@@ -36,9 +34,6 @@
 }
 
 .list .list_content h2 {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   padding-bottom: 5px;
 }
 
@@ -60,4 +55,37 @@
 
 .list .list_content .views span:last-child {
   margin-right: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .list {
+    flex-direction: column;
+  }
+
+  .list .list_img {
+    min-height: 0;
+    height: 200px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .list {
+    flex-direction: row;
+  }
+
+  .list .list_content h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-bottom: 5px;
+  }
+
+  .list .list_img {
+    max-width: 100px;
+    max-height: 100px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 5px;
+  }
 }
