@@ -171,10 +171,6 @@ header .search span.burger {
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
-  box-shadow: 2px 2px 5px #343a4020;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid #343a40;
 }
 
 .search-box.active {
@@ -184,6 +180,10 @@ header .search span.burger {
 }
 
 .search-box form {
+  box-shadow: 2px 2px 5px #343a4020;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #343a40;
   height: 100%;
   overflow: hidden;
   background: transparent;
