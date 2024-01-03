@@ -1,3 +1,12 @@
 .category .container {
   padding-block: 20px;
 }
+
+.category .query_lists {
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+.category .subhero {
+  margin-bottom: 30px;
+}
