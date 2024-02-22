@@ -14,7 +14,7 @@ import { RiHome2Line } from "react-icons/ri";
 import { GoQuestion } from "react-icons/go";
 import { HiOutlineDocumentDuplicate } from "react-icons/hi2";
 import { SlEarphones } from "react-icons/sl";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Header({ withPadding }) {
   const navigate = useNavigate();
@@ -27,6 +27,10 @@ export default function Header({ withPadding }) {
   const search = (e) => {
     e.preventDefault();
     navigate(`/search/${searchQuery}`);
+  };
+
+  const closeNav = () => {
+    document.querySelector(".nav-mobile").classList.remove("active");
   };
 
   return (
@@ -47,58 +51,33 @@ export default function Header({ withPadding }) {
         </nav>
 
         <div className="nav-mobile">
-          <NavLink
-            to="/"
-            onClick={() =>
-              document.querySelector(".nav-mobile").classList.remove("active")
-            }
-          >
+          <NavLink to="/" onClick={closeNav}>
             <span>
               <RiHome2Line />
             </span>
             Home
           </NavLink>
 
-          <NavLink
-            to="/articles"
-            onClick={() =>
-              document.querySelector(".nav-mobile").classList.remove("active")
-            }
-          >
+          <NavLink to="/articles" onClick={closeNav}>
             <span>
               <HiOutlineDocumentDuplicate />
             </span>
             Articles
           </NavLink>
-          <NavLink
-            to="/about"
-            onClick={() =>
-              document.querySelector(".nav-mobile").classList.remove("active")
-            }
-          >
+          <NavLink to="/about" onClick={closeNav}>
             <span>
               <GoQuestion />
             </span>
             About
           </NavLink>
-          <NavLink
-            to="/contact"
-            onClick={() =>
-              document.querySelector(".nav-mobile").classList.remove("active")
-            }
-          >
+          <NavLink to="/contact" onClick={closeNav}>
             <span>
               <SlEarphones />
             </span>
             Contact Us
           </NavLink>
 
-          <div
-            className="social-mobile"
-            onClick={() =>
-              document.querySelector(".nav-mobile").classList.remove("active")
-            }
-          >
+          <div className="social-mobile" onClick={closeNav}>
             <span>
               <FaFacebook />
             </span>

@@ -177,7 +177,7 @@ header .search span.burger {
 .search-box::before {
   content: "";
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   position: fixed;
   inset: 0;
   left: 50%;
