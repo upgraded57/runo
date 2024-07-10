@@ -7,9 +7,11 @@ import { Subhero } from "./../../components/subhero/Subhero";
 import List from "./../../components/list/List";
 import Footer from "./../../components/footer/Footer";
 import { BlogCard } from "./../../components/blogCard/BlogCard";
+import UseFetchUserNews from "../../Hooks/Fetches/usefetchUserNews";
 
 export default function Categories() {
   const navigate = useNavigate();
+  const { data: articles, isLoading } = UseFetchUserNews();
   const { article_category: category } = useParams();
   const headers = [
     "Popular",
@@ -39,31 +41,25 @@ export default function Categories() {
         <div className="container">
           <h3 className="h-300">{`Newest in ${validCategory}`}</h3>
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
         <div className="container">
           <h3 className="h-300">Viewers choice</h3>
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
         <div className="container">
           <h3 className="h-300">{`Longer ${validCategory} Articles`}</h3>
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
         <div className="container">
@@ -73,20 +69,17 @@ export default function Categories() {
         <div className="container">
           <h3 className="h-300">Save for later</h3>
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
         <div className="container">
           <h3 className="h-300">Other Sections of Runo</h3>
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
       </div>

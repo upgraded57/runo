@@ -5,68 +5,46 @@ import Footer from "./../../components/footer/Footer";
 import bar from "../../assets/bar.png";
 import { Author } from "./../../components/author/Author";
 import { BlogCard } from "./../../components/blogCard/BlogCard";
+import { useParams } from "react-router-dom";
+import UseFetchNews from "../../Hooks/Fetches/UseFetchNews";
+import { useQueryClient } from "@tanstack/react-query";
+
+import { useEffect } from "react";
 
 export default function Blog() {
+  const { id } = useParams();
+
+  // Get QueryClient from the context
+  const queryClient = useQueryClient();
+  useEffect(() => {
+    queryClient.invalidateQueries({ queryKey: ["News", id] });
+    window.scrollTo(0, 0);
+  }, [id]);
+  const { data: article, isLoading } = UseFetchNews(id);
+
   return (
     <>
-      <Hero type="single" />
+      {isLoading && <p>Loading ...</p>}
+      <Hero type="single" article={article} />
       <Header />
       <div className="container blog">
         <aside>
-          <p className="text-body text-bold">08.02.2021</p>
+          <p className="text-body text-bold">{article?.createdAt}</p>
           <img src={bar} alt="" />
           <p className="text-body text-bold">4 mininutes</p>
         </aside>
 
         <main>
-          <p className="text-body">
-            Seamlessly syndicate cutting-edge architectures rather than
-            collaborative collaboration and idea-sharing. Proactively incubate
-            visionary interfaces whereas premium benefits. Seamlessly negotiate
-            ubiquitous leadership skills rather than parallel ideas.
-            Dramatically visualize superior interfaces for best-of-breed
-            alignments. Synergistically formulate performance based users
-            through customized relationships. Interactively deliver
-            cross-platform ROI via granular systems. Intrinsicly enhance
-            effective initiatives vis-a-vis orthogonal outsourcing. Rapidiously
-            monetize market-driven opportunities with multifunctional users.
-            Collaboratively enhance visionary opportunities through
-            revolutionary schemas. Progressively network just in time customer
-            service without real-time scenarios.
-          </p>
-          <p className="text-body">
-            Seamlessly syndicate cutting-edge architectures rather than
-            collaborative collaboration and idea-sharing. Proactively incubate
-            visionary interfaces whereas premium benefits. Seamlessly negotiate
-            ubiquitous leadership skills rather than parallel ideas.
-            Dramatically visualize superior interfaces for best-of-breed
-            alignments. Synergistically formulate performance based users
-            through customized relationships. Interactively deliver
-            cross-platform ROI via granular systems. Intrinsicly enhance
-            effective initiatives vis-a-vis orthogonal outsourcing. Rapidiously
-            monetize market-driven opportunities with multifunctional users.
-            Collaboratively enhance visionary opportunities through
-            revolutionary schemas. Progressively network just in time customer
-            service without real-time scenarios.
-          </p>
-          <h1 className="h-300">
-            “Monotonectally seize superior mindshare rather than efficient
-            technology.”
-          </h1>
-          <p className="text-body">
-            Compellingly enhance seamless resources through competitive content.
-            Continually actualize 24/365 alignments for resource-leveling
-            platforms. Energistically enhance high standards in models and
-            professional expertise. Intrinsicly iterate extensible metrics for
-            prospective opportunities. Continually develop leading-edge
-            experiences through quality e-services.
-          </p>
+          <p className="text-body">{article?.desc}</p>
+          <p className="text-body">{article?.desc}</p>
+          <h1 className="h-300">{article?.title}</h1>
+          <p className="text-body">{article?.desc}</p>
           <div className="tags">
-            <span>adventure</span>
-            <span>photo</span>
-            <span>design</span>
+            <span>{article?.categories}</span>
+            <span>{article?.categories}</span>
+            <span>{article?.categories}</span>
           </div>
-          <Author />
+          <Author article={article} />
         </main>
       </div>
       <BlogCard type="related-post" />

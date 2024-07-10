@@ -1,25 +1,19 @@
 import "./list.css";
-import listImg from "../../assets/Blog Image.png";
 import { useNavigate } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa";
 import { BsChatDots } from "react-icons/bs";
 
-export default function List() {
+export default function List({ news }) {
   const navigate = useNavigate();
   return (
-    <div className="list" onClick={() => navigate("/articles/sgsg")}>
+    <div className="list" onClick={() => navigate("/articles/" + news._id)}>
       <div className="list_img">
-        <img src={listImg} alt="" />
+        <img src={news.photo} alt="" />
       </div>
 
       <div className="list_content">
-        <h2 className="h-200">
-          Richird Norton photorealistic rendering as real photos
-        </h2>
-        <p className="text-body">
-          Progressively incentivize cooperative systems through technically
-          sound functionalities. The credibly productivate seamless data.
-        </p>
+        <h2 className="h-200">{news.title}</h2>
+        <p className="text-body">{news.desc}</p>
         <div className="views">
           <span>
             <FaRegEye />

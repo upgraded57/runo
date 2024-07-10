@@ -7,8 +7,10 @@ import List from "../../components/list/List";
 import Footer from "./../../components/footer/Footer";
 import { BlogCard } from "../../components/blogCard/BlogCard";
 import { useNavigate } from "react-router-dom";
+import UseFetchUserNews from "../../Hooks/Fetches/usefetchUserNews";
 
 export default function Articles() {
+  const { data: articles, isLoading } = UseFetchUserNews();
   const navigate = useNavigate();
   return (
     <>
@@ -31,12 +33,9 @@ export default function Articles() {
             </button>
           </div>
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
         <div className="container">
@@ -51,12 +50,9 @@ export default function Articles() {
             </button>
           </div>
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
         <Subhero small />
@@ -72,12 +68,9 @@ export default function Articles() {
             </button>
           </div>
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
         <div className="container">
@@ -92,12 +85,9 @@ export default function Articles() {
             </button>
           </div>
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
         <div className="container">
@@ -112,12 +102,9 @@ export default function Articles() {
             </button>
           </div>
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
       </div>

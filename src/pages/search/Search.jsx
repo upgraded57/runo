@@ -5,8 +5,10 @@ import { BlogCard } from "../../components/blogCard/BlogCard";
 import { Subhero } from "./../../components/subhero/Subhero";
 import List from "./../../components/list/List";
 import Footer from "./../../components/footer/Footer";
+import UseFetchUserNews from "../../Hooks/Fetches/usefetchUserNews";
 
 export default function Search() {
+  const { data: articles, isLoading } = UseFetchUserNews();
   const { query } = useParams();
   return (
     <>
@@ -18,27 +20,25 @@ export default function Search() {
         <Subhero small />
         <div className="container">
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
         <Subhero small />
         <div className="container">
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
         <Subhero small />
         <div className="container">
           <div className="query_lists">
-            <List />
-            <List />
-            <List />
+            {articles?.map((news, idx) => (
+              <List key={idx} news={news} />
+            ))}
           </div>
         </div>
       </div>

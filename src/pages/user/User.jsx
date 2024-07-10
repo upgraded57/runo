@@ -63,9 +63,9 @@ export default function User() {
                 <div className="article_details">
                   <h3 className="h-100">{news.title}</h3>
                   <p>
-                    {news.desc.length < 1000
+                    {news.desc.length < 200
                       ? news.desc
-                      : news.desc.slice(0, 1000) + "..."}
+                      : news.desc.slice(0, 200) + "..."}
                   </p>
                 </div>
               </div>

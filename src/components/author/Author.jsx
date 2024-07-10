@@ -1,5 +1,4 @@
 import "./author.css";
-import authorImg from "../../assets/author2.png";
 
 import {
   FaFacebook,
@@ -8,15 +7,17 @@ import {
   FaBehanceSquare,
 } from "react-icons/fa";
 
-export const Author = () => {
+import noAvatar from "../../assets/noAvatar.png";
+
+export const Author = ({ article }) => {
   return (
     <div className="author">
       <div className="author-left">
         <div className="author-img">
-          <img src={authorImg} alt="" loading="lazy" />
+          <img src={noAvatar} alt="" loading="lazy" />
         </div>
         <span>
-          <p className="text-bold">By Jennifer Lawrence</p>
+          <p className="text-bold">By {article?.username}</p>
           <p>Thinker & Designer</p>
         </span>
       </div>

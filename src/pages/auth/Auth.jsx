@@ -2,16 +2,20 @@ import { useEffect, useState } from "react";
 import "./auth.css";
 import Login from "./Login";
 import Signup from "./Signup";
+import { Navigate } from "react-router-dom";
 
 export default function Auth() {
   const [authState, setAuthState] = useState("login");
+  const user = localStorage.getItem("user");
 
   useEffect(() => {
     document.title = "Runo - Auth";
   }, []);
 
   const AuthPage = authState === "login" ? Login : Signup;
-  return (
+  return user ? (
+    <Navigate to="/user" />
+  ) : (
     <div className="auth">
       <div className="auth_left">
         <AuthPage setAuthState={setAuthState} />
