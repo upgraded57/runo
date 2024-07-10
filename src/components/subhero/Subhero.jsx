@@ -1,6 +1,7 @@
 import "./subhero.css";
 import bar from "../../assets/bar.png";
 import UseFetchUserNews from "../../Hooks/Fetches/usefetchUserNews";
+import moment from "moment";
 
 export const Subhero = ({ small }) => {
   const { data: heroData, isLoading } = UseFetchUserNews();
@@ -22,7 +23,9 @@ export const Subhero = ({ small }) => {
                 : heroData[0]?.desc?.slice(0, 1000) + "..."}
             </p>
             <img src={bar} alt="" />
-            <p className="text-body">{heroData[0]?.createdAt}</p>
+            <p className="text-body">
+              {moment(heroData[0]?.createdAt).format("MMMM Do YYYY")}
+            </p>
           </div>
         </div>
       )}

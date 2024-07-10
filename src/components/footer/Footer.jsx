@@ -15,8 +15,8 @@ export default function Footer() {
       <div className="subfooter">
         <div className="contact">
           <h2 className="h-200">Contact the Publisher</h2>
-          <p className="text-body">mike@runo.com</p>
-          <p className="text-body">+944 450 904 505</p>
+          <p className="text-body">shokunbiupgraded@gmail.com</p>
+          <p className="text-body">+234 902 753 8937</p>
           <p className="text-body">shokunbiupgraded@gmail.com</p>
           <p className="text-body">+234 902 753 8937</p>
         </div>
@@ -33,9 +33,9 @@ export default function Footer() {
         <div className="headquarter">
           <h2 className="h-200">Headquarter</h2>
           <p className="text-body">
-            191 Middleville Road, <br />
-            NY 1001, Sydney <br />
-            Australia
+            18, Taiwo Street, <br />
+            Ajegunle Alakuko <br />
+            Lagos, Nigeria
           </p>
         </div>
         <div className="connections">

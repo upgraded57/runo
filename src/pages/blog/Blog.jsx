@@ -29,7 +29,9 @@ export default function Blog() {
       <Header />
       <div className="container blog">
         <aside>
-          <p className="text-body text-bold">{article?.createdAt}</p>
+          <p className="text-body text-bold">
+            {moment(article?.createdAt).format("MM Do YYYY")}
+          </p>
           <img src={bar} alt="" />
           <p className="text-body text-bold">4 mininutes</p>
         </aside>

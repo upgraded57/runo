@@ -2,6 +2,7 @@ import "./hero.css";
 import bar from "../../assets/bar.png";
 import { useState } from "react";
 import UseFetchUserNews from "./../../Hooks/Fetches/usefetchUserNews";
+import moment from "moment";
 
 export const Hero = ({ type, article }) => {
   const { data: heroData, isLoading } = UseFetchUserNews();
@@ -26,7 +27,7 @@ export const Hero = ({ type, article }) => {
               style={{ left: `${(currentHeroScreen - 1) * -100}vw` }}
             >
               {heroData &&
-                heroData?.map((data, idx) => (
+                heroData?.slice(0, 3)?.map((data, idx) => (
                   <div className="hero-screen" key={idx}>
                     <div className="cover-img">
                       <img src={data.photo} alt="Cover Photo" loading="lazy" />
@@ -36,7 +37,9 @@ export const Hero = ({ type, article }) => {
                       <div className="pill">{data.categories}</div>
                       <h1 className="h-300">{data.title}</h1>
                       <div className="hero__content-bottom">
-                        <p className="text-body">{data.createdAt}</p>
+                        <p className="text-body">
+                          {moment(data.createdAt).format("MMMM Do YYYY")}
+                        </p>
                         <img src={bar} alt="" />
                         <p className="text-body">
                           {data.desc.length < 200
@@ -51,14 +54,16 @@ export const Hero = ({ type, article }) => {
 
             <div className="hero-controller">
               {heroData &&
-                heroData?.map((data, idx) => (
-                  <span
-                    key={idx}
-                    className={currentHeroScreen === idx + 1 ? "active" : ""}
-                    onClick={slideHeroScreen}
-                    data-idx={idx + 1}
-                  ></span>
-                ))}
+                heroData
+                  ?.slice(0, 3)
+                  ?.map((data, idx) => (
+                    <span
+                      key={idx}
+                      className={currentHeroScreen === idx + 1 ? "active" : ""}
+                      onClick={slideHeroScreen}
+                      data-idx={idx + 1}
+                    ></span>
+                  ))}
             </div>
           </div>
         </>
