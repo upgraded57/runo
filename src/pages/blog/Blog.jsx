@@ -10,6 +10,7 @@ import UseFetchNews from "../../Hooks/Fetches/UseFetchNews";
 import { useQueryClient } from "@tanstack/react-query";
 
 import { useEffect } from "react";
+import moment from "moment";
 
 export default function Blog() {
   const { id } = useParams();
