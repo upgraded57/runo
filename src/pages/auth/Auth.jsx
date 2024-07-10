@@ -17,6 +17,7 @@ export default function Auth() {
     <Navigate to="/user" />
   ) : (
     <div className="auth">
+      <div className="logo">RUNO</div>
       <div className="auth_left">
         <AuthPage setAuthState={setAuthState} />
       </div>

@@ -61,11 +61,15 @@ export default function User() {
                   <img src={news.photo || breakingImg} alt="Article Image" />
                 </div>
                 <div className="article_details">
-                  <h3 className="h-100">{news.title}</h3>
+                  <h3 className="h-100">
+                    {news.title.length < 50
+                      ? news.title
+                      : news.title.slice(0, 50) + "..."}
+                  </h3>
                   <p>
-                    {news.desc.length < 200
+                    {news.desc.length < 100
                       ? news.desc
-                      : news.desc.slice(0, 200) + "..."}
+                      : news.desc.slice(0, 100) + "..."}
                   </p>
                 </div>
               </div>

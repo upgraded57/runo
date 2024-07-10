@@ -7,6 +7,13 @@
   gap: 20px;
 }
 
+.logo {
+  position: absolute;
+  top: 20px;
+  left: min(4vw, 30px);
+  font-family: "League Spartan", sans-serif;
+  font-size: 20px;
+}
 .auth_left,
 .auth_right {
   flex-basis: 50%;
@@ -83,6 +90,13 @@ form button {
   .auth {
     width: 100%;
     display: block;
+  }
+  .auth_left {
+    height: 100vh;
+  }
+
+  .auth_screen {
+    margin-top: -20vh;
   }
   .auth_right {
     display: none;

@@ -59,19 +59,19 @@
   box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .user_article_left {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 20px;
 }
 
 .user_article_left .image {
   min-width: 100px;
-  min-height: 100px;
-  max-width: 100px;
-  max-height: 100px;
+  width: 100px;
   border-radius: 10px;
   aspect-ratio: 1/1;
   overflow: hidden;
@@ -103,4 +103,19 @@
 .user_article_right button:last-child {
   background: red;
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .user_article {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user_article_left {
+    align-items: flex-start;
+  }
+
+  .user_article_right {
+    margin-left: auto;
+  }
 }
