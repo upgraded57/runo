@@ -1,5 +1,6 @@
 .new {
   margin-top: 50px;
+  padding-inline: min(4vw, 30px);
 }
 
 .new form textarea {
