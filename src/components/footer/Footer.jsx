@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "./footer.css";
 import {
   FaFacebook,
@@ -8,6 +9,7 @@ import {
 } from "react-icons/fa";
 
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="subfooter">
@@ -24,7 +26,9 @@ export default function Footer() {
           <p className="text-body">Partners</p>
           <p className="text-body">Job Opportunities</p>
           <p className="text-body">Advertise</p>
-          <p className="text-body">Membership</p>
+          <p className="text-body" onClick={() => navigate("/auth")}>
+            Editor Login
+          </p>
         </div>
         <div className="headquarter">
           <h2 className="h-200">Headquarter</h2>
