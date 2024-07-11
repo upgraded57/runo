@@ -8,13 +8,16 @@ import Footer from "./../../components/footer/Footer";
 import { BlogCard } from "../../components/blogCard/BlogCard";
 import { useNavigate } from "react-router-dom";
 import UseFetchUserNews from "../../Hooks/Fetches/usefetchUserNews";
+import Skeleton from "../../components/skeleton/Skeleton";
 
 export default function Articles() {
   const { data: articles, isLoading } = UseFetchUserNews();
   const navigate = useNavigate();
+
   return (
     <>
       <Header withPadding />
+      {isLoading && <Skeleton type="blogcards" />}
       <div className="articles">
         <div className="container">
           <h1 className="h-100">Most Viewed Today</h1>

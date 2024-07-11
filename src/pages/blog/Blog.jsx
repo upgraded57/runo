@@ -11,6 +11,7 @@ import { useQueryClient } from "@tanstack/react-query";
 
 import { useEffect } from "react";
 import moment from "moment";
+import Skeleton from "../../components/skeleton/Skeleton";
 
 export default function Blog() {
   const { id } = useParams();
@@ -25,9 +26,9 @@ export default function Blog() {
 
   return (
     <>
-      {isLoading && <p>Loading ...</p>}
+      {isLoading && <Skeleton type="hero" />}
       <Hero type="single" article={article} />
-      <Header />
+      <Header isLoading={isLoading} />
       <div className="container blog">
         <aside>
           <p className="text-body text-bold">

@@ -17,7 +17,8 @@
 }
 
 .list .list_img {
-  min-height: 100%;
+  height: 100%;
+  min-width: 200px;
   aspect-ratio: 1/1;
   overflow: hidden;
   border-radius: 5px;
@@ -70,10 +71,6 @@
 }
 
 @media screen and (max-width: 500px) {
-  .list {
-    flex-direction: row;
-  }
-
   .list .list_content h2 {
     overflow: hidden;
     white-space: nowrap;
@@ -82,10 +79,6 @@
   }
 
   .list .list_img {
-    max-width: 100px;
-    max-height: 100px;
-    aspect-ratio: 1/1;
-    overflow: hidden;
     border-radius: 5px;
   }
 }

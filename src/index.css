@@ -46,6 +46,10 @@ textarea {
   font-weight: bold;
 }
 
+.nowrap {
+  text-wrap: nowrap;
+}
+
 .pill {
   font-family: "Roboto", sans-serif;
   font-size: 10px;
@@ -66,7 +70,7 @@ textarea {
 
 .container {
   padding: 6vh 4vw;
-  width: min(1500px, 100vw);
+  width: min(1440px, 100vw);
   margin-inline: auto;
 }
 

@@ -13,7 +13,9 @@ export default function List({ news }) {
 
       <div className="list_content">
         <h2 className="h-200">{news.title}</h2>
-        <p className="text-body">{news.desc}</p>
+        <p className="text-body">
+          {news.desc.length < 200 ? news.desc : news.desc.slice(0, 200) + "..."}
+        </p>
         <div className="views">
           <span>
             <FaRegEye />

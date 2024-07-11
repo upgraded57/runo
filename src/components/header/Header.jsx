@@ -16,7 +16,7 @@ import { HiOutlineDocumentDuplicate } from "react-icons/hi2";
 import { SlEarphones } from "react-icons/sl";
 import { useState } from "react";
 
-export default function Header({ withPadding }) {
+export default function Header({ withPadding, isLoading }) {
   const navigate = useNavigate();
   const toggleSidebar = () => {
     document.querySelector(".nav-mobile").classList.toggle("active");
@@ -37,7 +37,7 @@ export default function Header({ withPadding }) {
     <>
       <header
         style={{
-          backgroundColor: withPadding ? "#343a40" : "",
+          backgroundColor: withPadding ? "#343a40" : isLoading ? "#343a40" : "",
         }}
       >
         <div className="logo">

@@ -2,10 +2,13 @@ import "./editorcard.css";
 import UseFetchUserNews from "../../Hooks/Fetches/usefetchUserNews";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
+import Skeleton from "../skeleton/Skeleton";
 
 export const EditorCard = () => {
   const navigate = useNavigate();
-  const { data: picks } = UseFetchUserNews();
+  const { data: picks, isLoading } = UseFetchUserNews();
+
+  if (isLoading) return <Skeleton type="blogcards" />;
   return (
     <>
       <div className="flex">
